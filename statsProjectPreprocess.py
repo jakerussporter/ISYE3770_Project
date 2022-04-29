@@ -62,4 +62,7 @@ medal_rate = medal_rate.fillna(0)
 
 #Turn the data into a csv file of the (medals earned) / (attempts at medals). If line df = df.drop_duplicates() on line
 #14 is uncommented, rename the file name below to 'medal_rate_no_teams.csv'.
+
+m_processed.to_csv('processed_teams.csv', index=True)
+t_processed.to_csv('attempts_teams.csv', index=True)
 medal_rate.to_csv('medal_rate.csv', index=True)

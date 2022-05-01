@@ -56,9 +56,13 @@ diff = np.setdiff1d(t_countries, m_countries)
 diff = diff.tolist()
 t_processed = t_processed.drop(diff, axis=1)
 
+
+host_countries = ['GRE', 'FRA', 'USA', 'GBR', 'SWE', 'BEL', 'SUI', 'NED', 'GER', 'NOR', 'FIN', 'ITA', 'AUS', 'AUT', 'JPN', 'MEX', 'FRG', 'CAN', 'URS', 'YUG', 'KOR', 'ESP', 'CHN', 'RUS', 'BRA']
+
 #Create rate table of each countries medals / attemps for each Olympics
 medal_rate = m_processed.div(t_processed)
-medal_rate = medal_rate.fillna(0)
+#medal_rate = medal_rate.fillna(0)
+medal_rate = medal_rate[host_countries]
 
 #Turn the data into a csv file of the (medals earned) / (attempts at medals). If line df = df.drop_duplicates() on line
 #14 is uncommented, rename the file name below to 'medal_rate_no_teams.csv'.
